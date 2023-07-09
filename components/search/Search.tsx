@@ -1,21 +1,26 @@
 'use client';
 
 import { FormEventHandler, useState } from "react";
+import useSWR from 'swr';
 import styles from './Search.module.css'
-import { usePosts } from "@/store";
+import { getPostsBySearch } from "@/services/getPosts";
+//import { usePosts } from "@/store";
 
 type Props = {
   onSearch: (value: any[]) => void;
 }
 
 export default function Search() {
+  const { mutate } = useSWR('posts');
   const [search, setSearch] = useState('');
-  const getPostsBySearch = usePosts(state => state.getPostsBySearch)
+  //const getPostsBySearch = usePosts(state => state.getPostsBySearch)
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    await getPostsBySearch(search);
+    const posts = await getPostsBySearch(search);
+
+    mutate(posts);
   }
 
   return (
