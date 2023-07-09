@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.wrapper}>
         <Link href="/" className="navigation">Home</Link>
         <Link href="/blog" className="navigation">Blog</Link>
