@@ -46,7 +46,15 @@ h1 {
 }
 
 .navigation {
-  padding: 0 1rem;
+  color: #ffffffde;
+}
+
+.navigation:hover {
+  color: #c37113;
+}
+
+.navigation_active {
+  color: #638110de;
 }
 
 @media (prefers-color-scheme: dark) {
