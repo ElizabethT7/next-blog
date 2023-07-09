@@ -12,12 +12,7 @@
 
 .wrapper > a {
   text-decoration: none;
-  color: #ffffffde;
   padding-left: 30px;
-}
-
-.wrapper > a:hover {
-  color: #c37113;
 }
 
 @media screen and (max-width: 1200px) {
