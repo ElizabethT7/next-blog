@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import styles from './Header.module.css'
 import Navigation from '../navigation/Navigation';
+import styles from './Header.module.css';
 
 const navItems = [
   { label: 'Home', href: '/' },
